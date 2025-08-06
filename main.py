@@ -39,7 +39,7 @@ async def translate_file(file: UploadFile = File(...)):
     output = io.StringIO()
 
     # Appel correct de la méthode generate_text
-    response = model.generate_text(prompt)
+    response = model.generate_content(prompt)
 
     traduction = response.text.strip()
     output.write(traduction + "\n")
