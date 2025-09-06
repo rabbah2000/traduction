@@ -28,11 +28,13 @@ async def translate_file(file: UploadFile = File(...)):
             texte_a_traduire += line + "\n"
 
     prompt = (
-        "Traduire ce texte du darija marocain vers le français.\n"
-        "Garder intact les numéros et les timecodes.\n"
-        "Ne rien ajouter ni modifier en dehors des traductions des textes en darija.\n"
-        "Voici le texte à traduire :\n\n"
-        f"{texte_a_traduire}"
+    "Corrige le texte en darija marocaine pour qu'il ait un bon sens donne directement la réponse et respecte le time line de chaque phrase,\n"
+    "en respectant l’orthographe, la grammaire et les harakates (voyelles courtes en arabe).\n"
+    "Garder intact les numéros et les timecodes.\n"
+    "Ne rien ajouter ni modifier en dehors des corrections du texte en darija.\n"
+    "Important : ne pas translittérer, convertir ou altérer les mots en arabe, ils doivent rester en écriture arabe.\n"
+    "Voici le texte à corriger :\n\n"
+    f"{texte_a_traduire}"
     )
 
     # Création de l'objet StringIO
